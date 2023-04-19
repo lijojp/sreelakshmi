@@ -1,20 +1,23 @@
 // const express = require("express");
 // const path = require("path")
 import express from "express"
-import path from "path"
 const app = express();
+import path from "path"
 const PORT = 3000
 import routes from "./server/routes/index.js"; 
 import { fileURLToPath } from 'url';
 import connect from "./server/database/mongodb.js";
 import * as dotenv from "dotenv";
+import bodyParser from "body-parser";
 
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+app.use(express.static('uploads'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+// app.use('/tapclone/sreelakshmi/ejs/views/uploads', express.static('uploads'));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", routes);
@@ -32,18 +35,19 @@ app.get("/gallery", (req, res) => {
 app.get("/about-1.html", (req, res) => {
   res.render("about-1"); 
 });
-app.get("/blog-single", (req, res) => {
+app.get("/blog-single.html", (req, res) => {
   res.render("blog-single"); 
 });
-app.get("/blog", (req, res) => {
+app.get("/blog.html", (req, res) => {
   res.render("blog"); 
 });
-app.get("/careers", (req, res) => {
+app.get("/careers.html", (req, res) => {
   res.render("careers"); 
 });
-app.get("/clients1.html", (req, res) => {
-  res.render("clients1"); 
-});
+// app.get("/clients1.html", (req, res) => {
+//   const name = 'John'
+//   res.render("clients1",{name}); 
+// });
 app.get("/clients2.html", (req, res) => {
   res.render("clients2"); 
 });

@@ -210,6 +210,12 @@
                     
                     <h2 style="font-family:'Montserrat', sans-serif !important;font-size:large;color:#20469e;"> 5 Star Hotels </h2>
 
+                      <ul class="row portfolio-item item-center">
+                      <% for (let i = 0; i < images.length; i++) { %>
+                        <li class="mix co col-xl-3 col-md-3 col-6 col-sm-6 pd">
+                            <img src="/uploads/<%= images[i] %>"></li>
+                      <% } %>
+                    </ul>
 
                     <ul class="row portfolio-item item-center">
                         <li class="mix co col-xl-3 col-md-3 col-6 col-sm-6 pd">
@@ -347,7 +353,7 @@
                                 <h4 class="pre-footer-title">BURNER & HEAT PUMP SALES</h4>
 
                                 <p>MOB :+91 6238811826,9562418266
-                                    <br>suntecsales@sreelakshmi.info
+                                    <br>retailsales@sreelakshmi.info
                                 </p>
                             </div>
                         </div>
