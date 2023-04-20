@@ -1,7 +1,3 @@
-//work pending===================================
-//1. index
-
-
 import multer from "multer";
 import ImageModel from "../models/image.model.js";
 import http from 'http'
@@ -10,7 +6,6 @@ import fs from 'fs'
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import imageModel from "../models/image.model.js";
-
 
 
 const Storage = multer.diskStorage({
@@ -24,7 +19,7 @@ const upload = multer({
 }).single("testImage");
 
 
-
+// indexing working
 export const index = async (req, res) => {
   // to find only one image #######################################
     // try {
@@ -51,9 +46,9 @@ export const index = async (req, res) => {
         } else {
           const images = files.filter(file => {
             const extname = path.extname(file);
-            return extname === '.png' || extname === '.jpg' || extname === '.jpeg' || extname === '.gif';
+            return extname === '.png' || extname === '.jpg' || extname === '.jpeg' || extname === '.webp';
           });
-          res.setHeader('Content-Type', 'application/json');
+          // res.setHeader('Content-Type', 'text/html');
           // res.end(JSON.stringify(images));
           res.render('clients1', { images: images });
         }
@@ -94,6 +89,3 @@ export const destroy = async (req, res) => {
   await ImageModel.deleteOne({ _id: req.params.id });
   res.json({ message: "image deleated" });
 };
-
-
-
