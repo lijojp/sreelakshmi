@@ -1,5 +1,3 @@
-// const express = require("express");
-// const path = require("path")
 import express from "express"
 const app = express();
 import path from "path"
@@ -29,8 +27,8 @@ app.get("/", (req, res) => {
   res.render("ind"); // ind refers to ind.ejs
 });
 
-app.get("/gallery", (req, res) => {
-  res.render("index", {path: req.path.substring(1)}); // index refers to index.ejs
+app.get("/gallery.html", (req, res) => {
+  res.render("gallery", {path: req.path.substring(1)}); // index refers to index.ejs
 });
 app.get("/about-1.html", (req, res) => {
   res.render("about-1"); 

@@ -11,7 +11,7 @@ const router = Router();
 // const auth = passport.authenticate("jwt", { session: false })
 
 router.use("/clients1.html", StarHotelsApi);
-router.use("/careers", CareersApi);
+router.use("/careers.html", CareersApi);
 // router.use("/auth", AuthApi);
 // router.use("/user", UserApi);
 // router.use("/category", auth, CategoryApi)

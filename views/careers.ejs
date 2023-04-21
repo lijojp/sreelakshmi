@@ -204,91 +204,21 @@
                     <div class="col-md-9 blog-grid" style="width:95% !important">
                         <section class="blog-services" style="margin-top: 30px;">
                             <div class="row news">
+                                <% for (let i = 0; i < images.length; i++) { %>
                                 <div class="col-sm-6">
                                     <div class="blog-img-box">
                                         
                                         <a class="hover-effect">
-                                            <img src="images/gallery/careers/Abstract Colorful We Are Hiring Free Instagram Post (1).webp" alt="Fuel" />
+                                            <img src="/uploads/careers/<%= images[i] %>%>"></li>
                                         </a>
+                                        
                                     </div>
                                     <div class="blog-content">
                                         <h3><a href="mailto:hr@supergaskochi.in"> Apply Now </a></h3>
                                         
                                     </div>
                                 </div>
-
-                                <div class="col-sm-6">
-                                    <div class="blog-img-box">
-                                        
-                                        <a class="hover-effect">
-                                            <img src="images/gallery/careers/Red Modern Hiring Instagram Post.webp" alt="Field Training" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="mailto:hr@supergaskochi.in"> Apply Now </a> </h3>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="clearfix spacer-60"> </div>
-
-                                <div class="col-sm-6">
-                                    <div class="blog-img-box">
-                                        
-                                        <a class="hover-effect">
-                                            <img src="images/gallery/careers/Orange and Peach Simple Now Hiring Announcement Instagram Post.webp" alt="Environment" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3><a href="mailto:hr@supergaskochi.in"> Apply Now </a> </h3>
-                                    
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="blog-img-box">
-                                        
-                                        <a class="hover-effect">
-                                            <img src="images/gallery/careers/Orange and White Modern We are hiring Instagram post.webp" alt="Field Training" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3> <a href="mailto:hr@supergaskochi.in"> Apply Now </a> </h3>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="clearfix spacer-60"> </div>                                
-
-                                <div class="col-sm-6">
-                                    <div class="blog-img-box">
-                                        
-                                        <a class="hover-effect">
-                                            <img src="images/gallery/careers/Blue Modern We Are Hiring Instagram Post .webp" alt="Fuel" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3> <a href="mailto:hr@supergaskochi.in"> Apply Now </a> </h3>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="clearfix spacer-60"> </div>
-
-                                <div class="col-sm-6">
-                                    <div class="blog-img-box">
-                                        
-                                        <a class="hover-effect">
-                                            <img src="images/gallery/careers/We Are Hiring! Job Vacancy - Copy.webp" alt="Field Training" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3> <a href="mailto:hr@supergaskochi.in"> Apply Now </a> </h3>
-                                        
-                                    </div>
-                                </div>
-                                
-                                
+                                <% } %>    
                             </div>
                             <br>
                             <h3 class="title-services-other title-2" style="padding:15px;margin-top:20px;font-family:Roboto;color:#093EB6;font-weight: bold;">

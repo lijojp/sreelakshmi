@@ -1,12 +1,13 @@
 //work pending===================================
-//1. index
-
+//1.deleting from mongodb not from server
 
 import multer from "multer";
 import CareersModel from "../models/careers.model.js";
+import path from 'path'
+import fs from 'fs'
 
 const Storage = multer.diskStorage({
-  destination: "uploads",
+  destination: "/tapclone/sreelakshmi/ejs/public/uploads/careers",
   filename: (req, file, cb) => {
     cb(null, file.originalname);
   },
@@ -18,7 +19,27 @@ const upload = multer({
 
 
 export const index = async (req, res) => {
-  
+
+    if (req.method === 'GET' && req.url === '/') {
+      const imagesDir = ('/tapclone/sreelakshmi/ejs/public/uploads/careers');//path to folder where image is uploaded
+      fs.readdir(imagesDir, (err, files) => {
+        if (err) {
+          console.error(`Error reading directory ${imagesDir}: ${err}`);
+          res.statusCode = 500;
+          res.end('Internal Server Error');
+        } else {
+          const images = files.filter(file => {
+            const extname = path.extname(file);
+            return extname === '.png' || extname === '.jpg' || extname === '.jpeg' || extname === '.webp';
+          });
+          res.render('careers', { images: images });
+        }
+      });
+    } 
+    else {
+      res.statusCode = 404;
+      res.end('Not Found');
+    }
   
 };
 
