@@ -3,6 +3,7 @@ const app = express();
 import path from "path"
 const PORT = 3000
 import routes from "./server/routes/index.js"; 
+import AdminRoutes from "./server/routes/AdminRoutes/index.js"
 import { fileURLToPath } from 'url';
 import connect from "./server/database/mongodb.js";
 import * as dotenv from "dotenv";
@@ -17,8 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 // app.use('/tapclone/sreelakshmi/ejs/views/uploads', express.static('uploads'));
 app.use(express.static(path.join(__dirname, "public")));
+console.log(__dirname);
+
 
 app.use("/", routes);
+app.use("/admin", AdminRoutes);
 
 // mongodb connection
 await connect();
@@ -133,7 +137,9 @@ app.get("/services-list.html", (req, res) => {
 app.get("/technology.html", (req, res) => {
   res.render("technology.html"); 
 });
-
+app.get("/charts-chartjs.html", (req, res) => {
+  res.render("charts-chartjs"); 
+});
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 });

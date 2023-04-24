@@ -1215,7 +1215,7 @@ section.home-stats {
 /*Services Section*/
 
 .services-other .img-box {
-    float: left;
+    /* float: left; */
     margin-right: 22px;
     display: inline-block;
     width: 78px;
@@ -1993,7 +1993,7 @@ h4.panel-title {
 }
 
 .download-file span {
-    float: right;
+    /* float: right; */
     font-size: 14px;
     color: #677078;
     line-height: 50px;
@@ -3233,7 +3233,7 @@ p.location-2 span {
         width: 100%;
     }
     .location {
-        float: left;
+        /* float: left; */
         text-align: left;
         margin-top: 15px;
         display: inline-block;
